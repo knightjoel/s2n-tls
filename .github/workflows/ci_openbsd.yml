@@ -25,7 +25,7 @@ jobs:
           version: '7.2'
           shell: bash
           run: |
-            pkg_add ninja cmake
+            sudo pkg_add ninja cmake
             pkg_info
             .github/s2n_bsd.sh
       #- name: upload test results
