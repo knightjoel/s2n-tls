@@ -28,10 +28,11 @@ jobs:
           run: |
             sudo pkg_add ninja cmake
             pkg_info
+            sysctl hw
             .github/s2n_bsd.sh
-      - name: upload test results
-        uses: actions/upload-artifact@master
-        with:
-          name: all_test_output
-          path: |
-            output
+      #- name: upload test results
+      #  uses: actions/upload-artifact@master
+      #  with:
+      #    name: all_test_output
+      #    path: |
+      #      output
