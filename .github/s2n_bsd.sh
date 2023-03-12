@@ -22,6 +22,7 @@ if [ "$(uname)" = 'FreeBSD' ]; then
 else
     export CTEST_PARALLEL_LEVEL=$(sysctl -n hw.ncpuonline)
 fi
+echo CTEST_PARALLEL_LEVEL=$CTEST_PARALLEL_LEVEL
 
 errors=0
 onerror() {
