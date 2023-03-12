@@ -13,7 +13,7 @@ on:
 
 jobs:
   testopenbsd:
-    runs-on: ubuntu-latest
+    runs-on: macos-12
     name: CI OpenBSD
     steps:
       - uses: actions/checkout@v3
