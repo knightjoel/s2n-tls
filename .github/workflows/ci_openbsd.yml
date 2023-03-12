@@ -29,7 +29,6 @@ jobs:
             pkg_info
             .github/s2n_bsd.sh
       - name: upload test results
-        if: ${{ failure() }}
         uses: actions/upload-artifact@master
         with:
           name: all_test_output
