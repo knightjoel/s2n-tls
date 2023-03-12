@@ -24,6 +24,7 @@ jobs:
           architecture: x86-64
           version: '7.2'
           shell: bash
+          cpu_count: 4
           run: |
             sudo pkg_add ninja cmake
             pkg_info
