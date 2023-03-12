@@ -42,6 +42,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#define S2N_TEST_DEBUG
 #include "api/s2n.h"
 #include "s2n_test.h"
 #include "testlib/s2n_testlib.h"
@@ -285,3 +286,5 @@ int main(int argc, char **argv)
 
     END_TEST();
 }
+#undef S2N_TEST_DEBUG
+
