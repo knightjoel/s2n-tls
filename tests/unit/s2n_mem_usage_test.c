@@ -278,10 +278,10 @@ int main(int argc, char **argv)
     if (allocation_diff > maxAllowedMemDiff
             || handshake_diff > maxAllowedMemDiff
             || handshake_diff < minAllowedMemDiff) {
-        fprintf(stdout, "\nActual KB per connection: %i\n",
-                (int) ACTUAL_MEM_PER_CONNECTION(connectionsToUse, handshake_diff));
         FAIL_MSG("Unexpected memory usage. If expected, update MEM_PER_CONNECTION.");
     }
+    fprintf(stdout, "\nActual KB per connection: %i\n",
+            (int) ACTUAL_MEM_PER_CONNECTION(connectionsToUse, handshake_diff));
 #endif
 
     END_TEST();
