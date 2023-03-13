@@ -43,7 +43,7 @@ rm -rf release
 cmake . -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Debug
 cmake --build ./build -j $CTEST_PARALLEL_LEVEL
 #ninja -C build test || onerror
-cd tests/unit && ../../debug/bin/s2n_mem_usage_test
+cd tests/unit && ../../build/bin/s2n_mem_usage_test
 #mv build/Testing/Temporary output/debug
 # reduce the number of files to copy back
 rm -rf build
