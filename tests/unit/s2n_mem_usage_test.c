@@ -274,6 +274,8 @@ int main(int argc, char **argv)
     TEST_DEBUG_PRINT("Min VmData diff allowed:     %10zd\n", minAllowedMemDiff);
     TEST_DEBUG_PRINT("allocation_diff:             %10zd\n", allocation_diff);
     TEST_DEBUG_PRINT("handshake_diff:              %10zd\n", handshake_diff);
+    TEST_DEBUG_PRINT("Actual mem per connection:   %i\n",
+            (int) ACTUAL_MEM_PER_CONNECTION(connectionsToUse, handshake_diff));
 
     /*
      * get_vm_data_size is required for this test to succeed.
@@ -283,10 +285,10 @@ int main(int argc, char **argv)
     if (allocation_diff > maxAllowedMemDiff
             || handshake_diff > maxAllowedMemDiff
             || handshake_diff < minAllowedMemDiff) {
+        fprintf(stdout, "\nActual KB per connection: %i\n",
+                (int) ACTUAL_MEM_PER_CONNECTION(connectionsToUse, handshake_diff));
         FAIL_MSG("Unexpected memory usage. If expected, update MEM_PER_CONNECTION.");
     }
-    fprintf(stderr, "\nActual KB per connection: %i\n",
-            (int) ACTUAL_MEM_PER_CONNECTION(connectionsToUse, handshake_diff));
 #endif
 
     END_TEST();
