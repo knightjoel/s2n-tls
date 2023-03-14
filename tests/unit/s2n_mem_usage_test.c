@@ -43,6 +43,7 @@
 #include <unistd.h>
 
 #define S2N_TEST_DEBUG
+
 #include "api/s2n.h"
 #include "s2n_test.h"
 #include "testlib/s2n_testlib.h"
@@ -55,7 +56,7 @@
 #ifdef __FreeBSD__
     #define MEM_PER_CONNECTION 57
 #elif defined(__OpenBSD__)
-    #define MEM_PER_CONNECTION 75
+    #define MEM_PER_CONNECTION 59
 #else
     #define MEM_PER_CONNECTION 49
 #endif
@@ -269,6 +270,10 @@ int main(int argc, char **argv)
 
     ssize_t handshake_diff = (vm_data_after_handshakes - vm_data_initial);
     ssize_t allocation_diff = (vm_data_after_allocation - vm_data_initial);
+
+    TEST_DEBUG_PRINT("Min VmData diff allowed:     %10zd\n", minAllowedMemDiff);
+    TEST_DEBUG_PRINT("allocation_diff:             %10zd\n", allocation_diff);
+    TEST_DEBUG_PRINT("handshake_diff:              %10zd\n", handshake_diff);
 
     /*
      * get_vm_data_size is required for this test to succeed.
