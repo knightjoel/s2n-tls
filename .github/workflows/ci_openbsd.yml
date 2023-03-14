@@ -28,6 +28,7 @@ jobs:
           run: |
             sudo pkg_add ninja cmake
             pkg_info
+            sysctl kern.version
             sysctl hw
             .github/s2n_bsd.sh
       - name: upload test results
