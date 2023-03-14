@@ -285,7 +285,7 @@ int main(int argc, char **argv)
             || handshake_diff < minAllowedMemDiff) {
         FAIL_MSG("Unexpected memory usage. If expected, update MEM_PER_CONNECTION.");
     }
-    fprintf(stdout, "\nActual KB per connection: %i\n",
+    fprintf(stderr, "\nActual KB per connection: %i\n",
             (int) ACTUAL_MEM_PER_CONNECTION(connectionsToUse, handshake_diff));
 #endif
 
